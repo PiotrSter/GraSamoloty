@@ -20,17 +20,22 @@ public class PlayerControl : MonoBehaviour
         
         if (Input.GetKey(KeyCode.W))
         {
-            this.rb.AddForce(transform.up * planeSpeed);
+            rb.velocity = transform.up * planeSpeed;
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
-        }       
+            gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
+        }
         if (Input.GetKey(KeyCode.D))
         {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
+            gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
         }
-        
+
         /*
         if (Input.GetKey(KeyCode.W))
         {
@@ -57,7 +62,7 @@ public class PlayerControl : MonoBehaviour
         //planePosition.y += Input.GetAxis("Vertical") * planeSpeed * Time.deltaTime;
         //planePosition.y = Mathf.Clamp(planePosition.y, -18.8f, 12.7f);
         //this.gameObject.transform.position = planePosition;
-        
-        
+
+
     }
 }
