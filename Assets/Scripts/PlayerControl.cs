@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     public float planeSpeed = 10.0f;
     public float planeSpeedRotate = 1.0f;
-    public int canTp = 0;
+    public bool canTp = true;
 
     private void Awake()
     {
@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     {       
         if (Input.GetKey(KeyCode.W))
         {
+            canTp = true;
             this.rb.velocity = transform.up * planeSpeed;
         }
         else
@@ -26,10 +27,12 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
+            canTp = false;
             this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
         }       
         if (Input.GetKey(KeyCode.D))
         {
+            canTp = false;
             this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
         }
     }  
