@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class CloudSpawner : MonoBehaviour
 {
-    //public GameManager gm;
-    public GameObject cloudOne;
-    public GameObject cloudTwo;
-    public GameObject cloudThree;
-    public GameObject cloudFour;
+    public GameManager gm;
     public GameObject[] Clouds = new GameObject[4];
     public float spawnDelay;
-    public float cloudSpawnDelay = 20f;
+    public float cloudSpawnDelay = 7f;
 
     void Awake()
     {
-        //gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Clouds[0] = cloudOne;
-        Clouds[1] = cloudTwo;
-        Clouds[2] = cloudThree;
-        Clouds[3] = cloudFour;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -27,8 +19,11 @@ public class CloudSpawner : MonoBehaviour
         spawnDelay -= Time.deltaTime;
         if(spawnDelay <= 0)
         {
-            spawnCloud();
-            spawnDelay = cloudSpawnDelay;
+            if (gm.howManyClouds < 5)
+            {
+                spawnCloud();
+                spawnDelay = cloudSpawnDelay;
+            }
         }
     }
 
@@ -37,5 +32,6 @@ public class CloudSpawner : MonoBehaviour
         float randomY = Random.Range(-35.5f, 35.5f);
         int randomIndex = Random.Range(0, 4);
         Instantiate(Clouds[randomIndex], new Vector3(-109, randomY, 0), Quaternion.identity);
+        gm.howManyClouds += 1;
     }
 }

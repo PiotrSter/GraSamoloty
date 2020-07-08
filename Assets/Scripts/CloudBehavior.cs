@@ -23,6 +23,7 @@ public class CloudBehavior : MonoBehaviour
         if(obj.gameObject.tag == "Destroyer")
         {
             Destroy(this.gameObject);
+            gm.howManyClouds -= 1;
         }
     }
 }

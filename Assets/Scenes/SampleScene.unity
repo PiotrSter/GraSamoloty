@@ -414,7 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  cloudSpeed: 5
+  cloudSpeed: 8
+  howManyClouds: 0
 --- !u!4 &1153754319
 Transform:
   m_ObjectHideFlags: 0
@@ -441,19 +442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e413ad8ddf06ef54aa2493d15e916e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudOne: {fileID: 7076928083516199720, guid: efc1e48fd2418f4408abf5a08294525f,
-    type: 3}
-  cloudTwo: {fileID: 8476447989587585115, guid: c1c40107db0787941af9cf79babe2f31,
-    type: 3}
-  cloudThree: {fileID: 984194789408442009, guid: dccb4311e24feaa418e546fc991c40af,
-    type: 3}
-  cloudFour: {fileID: 2125329616468245221, guid: 7dfa0bab91dcc1f4d945e177300d5a8e,
-    type: 3}
+  gm: {fileID: 0}
   Clouds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7076928083516199720, guid: efc1e48fd2418f4408abf5a08294525f, type: 3}
+  - {fileID: 8476447989587585115, guid: c1c40107db0787941af9cf79babe2f31, type: 3}
+  - {fileID: 984194789408442009, guid: dccb4311e24feaa418e546fc991c40af, type: 3}
+  - {fileID: 2125329616468245221, guid: 7dfa0bab91dcc1f4d945e177300d5a8e, type: 3}
   spawnDelay: 0
   cloudSpawnDelay: 7
 --- !u!1 &1209698654
@@ -1074,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111020901eee8704b850040a3835f00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeSpeed: 10
+  planeSpeed: 12
   planeSpeedRotate: 1
   canTp: 1
 --- !u!60 &1632263875
