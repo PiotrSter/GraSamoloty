@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloudSpawner : MonoBehaviour
 {
-    public GameManager gm;
+    //public GameManager gm;
     public GameObject cloudOne;
     public GameObject cloudTwo;
     public GameObject cloudThree;
@@ -15,7 +15,7 @@ public class CloudSpawner : MonoBehaviour
 
     void Awake()
     {
-        gm = GameObject.Find("GameManager").GetComonent<GameManager>();
+        //gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         Clouds[0] = cloudOne;
         Clouds[1] = cloudTwo;
         Clouds[2] = cloudThree;

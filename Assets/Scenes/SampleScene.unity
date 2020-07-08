@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156fc389dcb1af44ba9eeb31012b25ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
 --- !u!61 &131977745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -394,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1153754319}
   - component: {fileID: 1153754318}
+  - component: {fileID: 1153754320}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -429,6 +429,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153754320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153754317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e413ad8ddf06ef54aa2493d15e916e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudOne: {fileID: 7076928083516199720, guid: efc1e48fd2418f4408abf5a08294525f,
+    type: 3}
+  cloudTwo: {fileID: 8476447989587585115, guid: c1c40107db0787941af9cf79babe2f31,
+    type: 3}
+  cloudThree: {fileID: 984194789408442009, guid: dccb4311e24feaa418e546fc991c40af,
+    type: 3}
+  cloudFour: {fileID: 2125329616468245221, guid: 7dfa0bab91dcc1f4d945e177300d5a8e,
+    type: 3}
+  Clouds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnDelay: 0
+  cloudSpawnDelay: 7
 --- !u!1 &1209698654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156fc389dcb1af44ba9eeb31012b25ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
 --- !u!61 &1664486840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1518,7 +1544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156fc389dcb1af44ba9eeb31012b25ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
 --- !u!61 &2138257574
 BoxCollider2D:
   m_ObjectHideFlags: 0
