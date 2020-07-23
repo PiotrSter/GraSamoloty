@@ -7,4 +7,6 @@ public class GameManager : MonoBehaviour
     public float bulletSpeed = 20.0f;
     public float cloudSpeed = 5f;
     public int howManyClouds = 0;
+    public float standardEnemySpeed = 20f;
+    public float distanceFromThePlayer = 3f;
 }
