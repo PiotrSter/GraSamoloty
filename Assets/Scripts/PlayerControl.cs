@@ -17,7 +17,6 @@ public class PlayerControl : MonoBehaviour
     {       
         if (Input.GetKey(KeyCode.W))
         {
-            canTp = true;
             this.rb.velocity = transform.up * planeSpeed;
         }
         else
@@ -26,12 +25,10 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            canTp = false;
             this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
         }       
         if (Input.GetKey(KeyCode.D))
         {
-            canTp = false;
             this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
         }
     }  

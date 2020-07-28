@@ -45,7 +45,6 @@ public class BorderTeleport : MonoBehaviour
             }
 
             player.position = vector;
-
         }
     }
 }

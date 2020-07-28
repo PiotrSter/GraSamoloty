@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7070021712866923266}
+  - component: {fileID: 2834348600850091241}
   - component: {fileID: 4825962889412000708}
   - component: {fileID: 5050002268248694477}
   - component: {fileID: 1805243575562291977}
-  - component: {fileID: 5276739713220646419}
-  - component: {fileID: 2834348600850091241}
   m_Layer: 0
   m_Name: StandardEnemy
   m_TagString: Enemy
@@ -35,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!114 &2834348600850091241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173877338341263289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9aff2bb5e8cbe4faf5b15375010b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 200
 --- !u!212 &4825962889412000708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50,6 +62,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -245,41 +258,3 @@ PolygonCollider2D:
       - {x: -0.35999998, y: -2.76}
       - {x: -0.32999998, y: -2.6699998}
       - {x: -0.32999998, y: -2.49}
---- !u!61 &5276739713220646419
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173877338341263289}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.48116684, y: 2.5350962}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
-    newSize: {x: 19.2, y: 10.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 30, y: 30}
-  m_EdgeRadius: 0
---- !u!114 &2834348600850091241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173877338341263289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d9aff2bb5e8cbe4faf5b15375010b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
