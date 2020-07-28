@@ -23,7 +23,7 @@ public class ShotBullet : MonoBehaviour
 
     void shotBullet()
     {
-        Bullet = Instantiate(Bullet, transform.position, transform.rotation);
+        Instantiate(Bullet, transform.position, transform.rotation);
     }
 
 }

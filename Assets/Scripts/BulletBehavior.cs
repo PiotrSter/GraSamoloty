@@ -17,4 +17,12 @@ public class BulletBehavior : MonoBehaviour
     {
         this.rb.velocity = transform.up * gm.bulletSpeed;
     }
+
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if(obj.gameObject.tag == "Destroyer")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

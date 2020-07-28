@@ -7,7 +7,6 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     public float planeSpeed = 10.0f;
     public float planeSpeedRotate = 1.0f;
-    public bool canTp = true;
 
     private void Awake()
     {
