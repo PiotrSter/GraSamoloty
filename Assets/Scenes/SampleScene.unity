@@ -474,6 +474,8 @@ MonoBehaviour:
   cloudSpeed: 8
   howManyClouds: 0
   standardEnemySpeed: 20
+  standardEnemySpeedRotate: 1
+  distanceFromThePlayer: 3
 --- !u!4 &1153754319
 Transform:
   m_ObjectHideFlags: 0
@@ -1703,6 +1705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StandardEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050002268248694477, guid: 2c41adf4a18b6194b8dbef793e368e47,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5276739713220646419, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
