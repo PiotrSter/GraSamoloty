@@ -468,9 +468,9 @@ MonoBehaviour:
   bulletSpeed: 20
   cloudSpeed: 8
   howManyClouds: 0
-  standardEnemySpeed: 20
+  standardEnemySpeed: 12
   standardEnemySpeedRotate: 1
-  distanceFromThePlayer: 3
+  distanceFromThePlayer: 10
 --- !u!4 &1153754319
 Transform:
   m_ObjectHideFlags: 0
@@ -1681,20 +1681,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandardEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1805243575562291977, guid: 2c41adf4a18b6194b8dbef793e368e47,
+    - target: {fileID: 173877338341263289, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1805243575562291977, guid: 2c41adf4a18b6194b8dbef793e368e47,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2834348600850091241, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
       propertyPath: movementSpeed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5050002268248694477, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
@@ -1714,12 +1709,12 @@ PrefabInstance:
     - target: {fileID: 7070021712866923266, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -99.9
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 7070021712866923266, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7070021712866923266, guid: 2c41adf4a18b6194b8dbef793e368e47,
         type: 3}
