@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb;
     public float planeSpeed = 10.0f;
     public float planeSpeedRotate = 1.0f;
+    public float smoothTime = 0.1f;
 
     private void Awake()
     {
@@ -25,11 +24,11 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
+            this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate * smoothTime));
         }       
         if (Input.GetKey(KeyCode.D))
         {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
+            this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate * smoothTime));
         }
     }  
 }
