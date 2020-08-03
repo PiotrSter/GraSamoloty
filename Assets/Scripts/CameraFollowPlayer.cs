@@ -9,66 +9,66 @@ public class CameraFollowPlayer : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x >= 59.7f)
+        if (transform.position.x >= 39.8f)
         {
-            transform.position = new Vector3(59.7f, playerTransform.position.y, cameraOffset);
-            if (transform.position.y >= 40.7f)
+            transform.position = new Vector3(39.8f, playerTransform.position.y, cameraOffset);
+            if (transform.position.y >= 29.5f)
             {
-                transform.position = new Vector3(playerTransform.position.x, 40.7f, cameraOffset);
+                transform.position = new Vector3(playerTransform.position.x, 29.5f, cameraOffset);
             }
-            else if (transform.position.y <= -40.7f)
+            else if (transform.position.y <= -29.5f)
             {
-                transform.position = new Vector3(playerTransform.position.x, -40.7f, cameraOffset);
+                transform.position = new Vector3(playerTransform.position.x, -29.5f, cameraOffset);
             }
-            else if (playerTransform.position.x < 59.6f)
+            else if (playerTransform.position.x < 39.7f)
             {
                 transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
             }
         }
-        else if (transform.position.x <= -59.7f)
+        else if (transform.position.x <= -39.8f)
         {
-            transform.position = new Vector3(-59.7f, playerTransform.position.y, cameraOffset);
-            if (transform.position.y >= 40.7f)
+            transform.position = new Vector3(-39.8f, playerTransform.position.y, cameraOffset);
+            if (transform.position.y >= 29.5f)
             {
-                transform.position = new Vector3(playerTransform.position.x, 40.7f, cameraOffset);
+                transform.position = new Vector3(playerTransform.position.x, 29.5f, cameraOffset);
             }
-            else if (transform.position.y <= -40.7f)
+            else if (transform.position.y <= -29.5f)
             {
-                transform.position = new Vector3(playerTransform.position.x, -40.7f, cameraOffset);
+                transform.position = new Vector3(playerTransform.position.x, -29.5f, cameraOffset);
             }
-            else if (playerTransform.position.x > -59.6f)
+            else if (playerTransform.position.x > -39.7f)
             {
                 transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
             }
         }
-        else if (transform.position.y >= 40.7f)
+        else if (transform.position.y >= 29.5f)
         {
-            transform.position = new Vector3(playerTransform.position.x, 40.7f, cameraOffset);
-            if (transform.position.x >= 59.7f)
+            transform.position = new Vector3(playerTransform.position.x, 29.5f, cameraOffset);
+            if (transform.position.x >= 39.8f)
             {
-                transform.position = new Vector3(59.7f, playerTransform.position.y, cameraOffset);
+                transform.position = new Vector3(39.8f, playerTransform.position.y, cameraOffset);
             }
-            else if (transform.position.x <= -59.7f)
+            else if (transform.position.x <= -39.8f)
             {
-                transform.position = new Vector3(-59.7f, playerTransform.position.y, cameraOffset);
+                transform.position = new Vector3(-39.8f, playerTransform.position.y, cameraOffset);
             }
-            else if (playerTransform.position.y < 40.6f)
+            else if (playerTransform.position.y < 29.4f)
             {
                 transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
             }
         }
-        else if (transform.position.y <= -40.7f)
+        else if (transform.position.y <= -29.5f)
         {
-            transform.position = new Vector3(playerTransform.position.x, -40.7f, cameraOffset);
-            if (transform.position.x >= 59.7f)
+            transform.position = new Vector3(playerTransform.position.x, -29.5f, cameraOffset);
+            if (transform.position.x >= 39.8f)
             {
-                transform.position = new Vector3(59.7f, playerTransform.position.y, cameraOffset);
+                transform.position = new Vector3(39.8f, playerTransform.position.y, cameraOffset);
             }
-            else if (transform.position.x <= -59.7f)
+            else if (transform.position.x <= -39.8f)
             {
-                transform.position = new Vector3(-59.7f, playerTransform.position.y, cameraOffset);
+                transform.position = new Vector3(-39.8f, playerTransform.position.y, cameraOffset);
             }
-            else if (playerTransform.position.y > -40.6f)
+            else if (playerTransform.position.y > -29.4f)
             {
                 transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
             }

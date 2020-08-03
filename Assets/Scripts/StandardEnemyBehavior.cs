@@ -64,32 +64,34 @@ public class StandardEnemyBehavior : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D rb;
+    GameManager gm;
 
-    public float movementSpeed = 200.0f;
+    //public float movementSpeed = 200.0f;
     private bool followingPlayer = false;
 
     private void Awake()
     {
         this.player = GameObject.Find("Player");
         this.rb = this.gameObject.GetComponent<Rigidbody2D>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Start()
     {
         this.transform.rotation = LookAtPlayer();
 
-        this.rb.AddForce(this.gameObject.transform.up * movementSpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
     {
         float distance = Vector2.Distance(this.transform.position, player.transform.position);
 
-        if (distance > 150.0f)
+        if (distance > 50.0f)
             followingPlayer = false;
 
         if (followingPlayer)
-            BackRadarDetected();
+            FollowPlayer();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -108,7 +110,7 @@ public class StandardEnemyBehavior : MonoBehaviour
         }
     }
 
-    private void BackRadarDetected()
+    private void FollowPlayer()
     {
         float zVelocity = 0.0f;
         float smoothTime = 0.2f;
@@ -118,7 +120,14 @@ public class StandardEnemyBehavior : MonoBehaviour
 
         this.rb.velocity = Vector3.zero;
         this.rb.angularVelocity = 0.0f;
-        this.rb.AddForce(this.gameObject.transform.up * movementSpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
+
+        float distance = Vector2.Distance(this.transform.position, player.transform.position);
+
+        if(distance <= gm.distanceFromThePlayer)
+        {
+            this.rb.velocity = Vector3.zero;
+        }
     }
 
     private Quaternion LookAtPlayer() => Quaternion.LookRotation(Vector3.forward, player.transform.position - this.transform.position);
@@ -129,6 +138,6 @@ public class StandardEnemyBehavior : MonoBehaviour
         this.rb.velocity = Vector3.zero;
         this.rb.angularVelocity = 0.0f;
 
-        this.rb.AddForce(this.gameObject.transform.up * movementSpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
     }
 }
