@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Destroyer
+  - StandardEnemy
   - Enemy
   layers:
   - Default
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 

@@ -66,7 +66,6 @@ public class StandardEnemyBehavior : MonoBehaviour
     private Rigidbody2D rb;
     GameManager gm;
 
-    //public float movementSpeed = 200.0f;
     private bool followingPlayer = false;
 
     private void Awake()
