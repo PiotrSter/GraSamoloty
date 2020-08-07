@@ -26,7 +26,8 @@ public class EnemyShotSpawner : MonoBehaviour
     void FixedUpdate()
     {
         int layerMask = 1 << 8;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 100, layerMask);
+        //float range = 50f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, Mathf.Infinity, layerMask);
         //Ray ray = new Ray(transform.position, Vector2.up);
         //RaycastHit hitInfo;
         float distance = Vector2.Distance(Enemy.transform.position, Player.transform.position);        
