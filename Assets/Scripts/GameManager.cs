@@ -10,5 +10,7 @@ public class GameManager : MonoBehaviour
     public float standardEnemySpeed = 10f;
     public float standardEnemySpeedRotate = 1f;
     public float distanceFromThePlayer = 10f;
-    public float playerHp = 100f;
+    public int playerHp = 100;
+    public int playerDemage = 10;
+    public int standardEnemyDemage = 10;
 }

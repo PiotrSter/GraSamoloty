@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     public float planeSpeed = 10.0f;
     public float planeSpeedRotate = 1.0f;
 
-    private void Awake()
+    void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
@@ -31,5 +31,5 @@ public class PlayerControl : MonoBehaviour
         {
             this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
         }
-    }  
+    }
 }

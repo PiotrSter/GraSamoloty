@@ -4,67 +4,10 @@ using UnityEngine;
 
 public class StandardEnemyBehavior : MonoBehaviour
 {
-    /*
     private GameObject player;
     private Rigidbody2D rb;
     GameManager gm;
-    public float maxDetectionRange = 50.0f;
-    //public float minDetectionRange = 20.0f;
-
-    //private bool back = false;
-
-    private void Awake()
-    {
-        this.player = GameObject.Find("Player");
-        this.rb = this.gameObject.GetComponent<Rigidbody2D>();
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-    private void Start()
-    {
-        this.transform.rotation = LookAtPlayer();
-
-        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
-    }
-
-    private void FixedUpdate()
-    {
-        float distance = Vector2.Distance(this.gameObject.transform.position, player.transform.position);
-
-        if (distance <= maxDetectionRange && distance >= gm.distanceFromThePlayer)
-            InDetectionArea();
-        else if (distance < gm.distanceFromThePlayer)
-            NearPlayer();
-        else if (distance > maxDetectionRange)
-            OutDetectionArea();
-
-    }
-
-    private void InDetectionArea()
-    {
-        this.transform.rotation = LookAtPlayer();
-
-        this.rb.velocity = Vector3.zero;
-        this.rb.angularVelocity = 0.0f;
-        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
-    }
-
-    private void NearPlayer()
-    {
-        this.rb.velocity = Vector3.zero;
-        gm.standardEnemySpeed = 8f;
-    }
-
-    private void OutDetectionArea()
-    {
-        gm.standardEnemySpeed = 12f;
-    }
-
-    private Quaternion LookAtPlayer() => Quaternion.LookRotation(Vector3.forward, player.transform.position - this.transform.position);*/
-
-    private GameObject player;
-    private Rigidbody2D rb;
-    GameManager gm;
+    public float enemyHp = 100f;
 
     private bool followingPlayer = false;
 
