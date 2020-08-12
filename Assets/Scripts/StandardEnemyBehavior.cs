@@ -7,7 +7,7 @@ public class StandardEnemyBehavior : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     GameManager gm;
-    public float enemyHp = 100f;
+    public int enemyHp = 20;
 
     private bool followingPlayer = false;
 

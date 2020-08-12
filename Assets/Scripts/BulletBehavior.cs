@@ -7,15 +7,16 @@ public class BulletBehavior : MonoBehaviour
     Rigidbody2D rb;
     GameManager gm;
     GameObject player;
-    //public GameObject enemy;
+    GameObject enemy;
+    StandardEnemyBehavior enemySC;
 
     void Awake()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        //StandardEnemyBehavior enemySc = enemy.GetComponent<StandardEnemyBehavior>();
-        //enemy = GameObject.Find("StandardEnemy");
+        enemy = GameObject.Find("StandardEnemy");
+        enemySC = GetComponent<StandardEnemyBehavior>();
     }
 
     void Update()
@@ -32,8 +33,12 @@ public class BulletBehavior : MonoBehaviour
         
         if (obj.gameObject.tag == "Enemy")
         {
-            //enemySc.enemyHp -= gm.playerDemage;
+            enemySC.enemyHp -= gm.playerDemage;
             Destroy(this.gameObject);
+            if(enemySC.enemyHp <= 0)
+            {
+                Destroy(enemy);
+            }
         }
         
         if (obj.gameObject.tag == "Player")
