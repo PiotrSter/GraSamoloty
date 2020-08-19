@@ -43,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
         {
             case 1:
                 Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);
+                gm.howManyEnemys++;
                 break;
             case 2:
                 Debug.Log("Fala 2");
