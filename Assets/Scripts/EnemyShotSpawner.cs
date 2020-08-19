@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShotSpawner : MonoBehaviour
 {
-    public GameObject Bullet;
+    public GameObject BulletEnemy;
     public float bulletDelay = 2f;
     public float shotDelay;
     public bool canShoot = false;
@@ -26,7 +26,7 @@ public class EnemyShotSpawner : MonoBehaviour
 
     void shotBullet()
     {
-        Instantiate(Bullet, transform.position, transform.rotation);
+        Instantiate(BulletEnemy, transform.position, transform.rotation);
     }
 
 }

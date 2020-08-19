@@ -42,6 +42,15 @@ public class StandardEnemyBehavior : MonoBehaviour
         {
             followingPlayer = true;
         }
+
+        if (col.name == "Bullet(Clone)")
+        {
+            HpLoss();
+            if (enemyHp <= 0)
+            {
+                EnemyDestroy();
+            }
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -81,5 +90,15 @@ public class StandardEnemyBehavior : MonoBehaviour
         this.rb.angularVelocity = 0.0f;
 
         this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
+    }
+
+    void HpLoss()
+    {
+        enemyHp -= gm.playerDemage;
+    }
+
+    void EnemyDestroy()
+    {
+        Destroy(this.gameObject);
     }
 }
