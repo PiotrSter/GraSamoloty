@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    GameObject standardEnemy;
+    public GameObject standardEnemy;
     GameManager gm;
     public float timeToSpawnEnemy = 5f;
     public float spawnDelay;
@@ -12,7 +12,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
-        standardEnemy = GameObject.Find("StandardEnemy");
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -44,6 +43,9 @@ public class EnemySpawner : MonoBehaviour
         {
             case 1:
                 Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);
+                break;
+            case 2:
+                Debug.Log("Fala 2");
                 break;
         }
     }

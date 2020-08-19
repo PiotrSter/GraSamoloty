@@ -373,7 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9937d41d509045c43a559996d8a59395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 7678637018526492564, guid: 58951ed0764e47148b09f7198194aa29, type: 3}
+  BulletEnemy: {fileID: 5658558532744074960, guid: f4586a04317470f46b10601ab6f64c3e,
+    type: 3}
   bulletDelay: 2
   shotDelay: 0
   canShoot: 0
