@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float bulletSpeed = 20.0f;
+    public float bulletSpeed = 30.0f;
     public float cloudSpeed = 5f;
     public int howManyClouds = 0;
     public int howManyEnemys = 0;
@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float standardEnemySpeedRotate = 1f;
     public float distanceFromThePlayer = 10f;
     public int playerHp = 100;
+    public float playerFuel = 100f;
     public int playerDemage = 10;
     public int standardEnemyDemage = 10;
 }

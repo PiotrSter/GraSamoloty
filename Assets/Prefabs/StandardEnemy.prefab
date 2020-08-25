@@ -260,6 +260,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 20
+  Boosts:
+  - {fileID: 4092203490043091315, guid: 49680bb7583803c4c8ee3c8a9d555d9d, type: 3}
+  - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
+  - {fileID: 0}
 --- !u!1 &3492258654300186472
 GameObject:
   m_ObjectHideFlags: 0

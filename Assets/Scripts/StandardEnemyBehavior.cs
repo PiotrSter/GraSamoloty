@@ -8,6 +8,7 @@ public class StandardEnemyBehavior : MonoBehaviour
     private Rigidbody2D rb;
     GameManager gm;
     public int enemyHp = 20;
+    public GameObject[] Boosts = new GameObject[3];
 
     private bool followingPlayer = false;
 
@@ -48,7 +49,8 @@ public class StandardEnemyBehavior : MonoBehaviour
             HpLoss();
             if (enemyHp <= 0)
             {
-                EnemyDestroy();
+                SpawnBoost();
+                EnemyDestroy();                
             }
         }
     }
@@ -100,5 +102,11 @@ public class StandardEnemyBehavior : MonoBehaviour
     void EnemyDestroy()
     {
         Destroy(this.gameObject);
+    }
+
+    void SpawnBoost()
+    {
+        int randomIndex = Random.Range(0, 3);
+        Instantiate(Boosts[randomIndex], transform.position, transform.rotation);
     }
 }

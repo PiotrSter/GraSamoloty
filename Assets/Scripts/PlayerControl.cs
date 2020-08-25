@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public float planeSpeedRotate = 1.0f;
 
     public HpBar hpBar;
+    public FuelLevel fuelBar;
     GameManager gm;
 
     void Awake()
@@ -20,6 +21,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         hpBar.SetMaxHealth(gm.playerHp);
+        fuelBar.SetMaxFuel(gm.playerFuel);
     }
 
     void Update()
@@ -40,6 +42,11 @@ public class PlayerControl : MonoBehaviour
         {
             this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
         }
+        PlayerFuelLoss();
+        if(gm.playerFuel <= 0 )
+        {
+            PlayerDestroy();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -52,6 +59,28 @@ public class PlayerControl : MonoBehaviour
                 PlayerDestroy();
             }
         }
+        if (col.name == "carnister(Clone)")
+        {
+            if (gm.playerFuel <= 90)
+            {
+                PlayerFuelUpdata();
+            }
+            else
+            {
+                gm.playerFuel += 100 - gm.playerFuel;
+            }
+        }
+        if (col.name == "hpicon(Clone)")
+        {
+            if (gm.playerHp <= 90)
+            {
+                PlayerHpUpdata();
+            }
+            else
+            {
+                gm.playerHp += 100 - gm.playerHp;
+            }
+        }
     }
 
     void PlayerHpLoss()
@@ -61,9 +90,25 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    void PlayerFuelLoss()
+    {
+        gm.playerFuel -= Time.deltaTime;
+        fuelBar.SetFuel(gm.playerFuel);
+    }
+
     void PlayerDestroy()
     {
         Destroy(this.gameObject);
         Time.timeScale = 0;
+    }
+
+    void PlayerFuelUpdata()
+    {
+        gm.playerFuel += 10;
+    }
+
+    void PlayerHpUpdata()
+    {
+        gm.playerHp += 10;
     }
 }

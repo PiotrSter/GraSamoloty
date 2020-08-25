@@ -486,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 518.11, y: -359.79}
+  m_AnchoredPosition: {x: 518, y: -359.79}
   m_SizeDelta: {x: 397.2063, y: 38.464027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878246956
@@ -591,6 +591,7 @@ MonoBehaviour:
   standardEnemySpeedRotate: 1
   distanceFromThePlayer: 10
   playerHp: 100
+  playerFuel: 100
   playerDemage: 10
   standardEnemyDemage: 10
 --- !u!4 &1153754319
@@ -634,7 +635,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153754317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba058eeea90abd94fbe1463d845d1677, type: 3}
   m_Name: 

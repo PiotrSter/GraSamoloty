@@ -6,13 +6,11 @@ public class BulletBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     GameManager gm;
-    GameObject player;
 
     void Awake()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player");
     }
 
     void Update()
