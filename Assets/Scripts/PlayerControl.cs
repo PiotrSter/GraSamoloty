@@ -8,20 +8,12 @@ public class PlayerControl : MonoBehaviour
     public float planeSpeed = 10.0f;
     public float planeSpeedRotate = 1.0f;
 
-    public HpBar hpBar;
-    public FuelLevel fuelBar;
     GameManager gm;
 
     void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-    void Start()
-    {
-        hpBar.SetMaxHealth(gm.playerHp);
-        fuelBar.SetMaxFuel(gm.playerFuel);
     }
 
     void Update()
@@ -81,19 +73,23 @@ public class PlayerControl : MonoBehaviour
                 gm.playerHp += 100 - gm.playerHp;
             }
         }
+        if (col.name == "PowerUp(Clone)")
+        {
+            if (gm.playerDemage <= 30)
+            {
+                PlayerDemageUpdata();
+            }
+        }
     }
 
     void PlayerHpLoss()
     {
         gm.playerHp -= gm.standardEnemyDemage;
-        hpBar.SetHealth(gm.playerHp);
-
     }
 
     void PlayerFuelLoss()
     {
         gm.playerFuel -= Time.deltaTime;
-        fuelBar.SetFuel(gm.playerFuel);
     }
 
     void PlayerDestroy()
@@ -110,5 +106,10 @@ public class PlayerControl : MonoBehaviour
     void PlayerHpUpdata()
     {
         gm.playerHp += 10;
+    }
+
+    void PlayerDemageUpdata()
+    {
+        gm.playerDemage += 5;
     }
 }

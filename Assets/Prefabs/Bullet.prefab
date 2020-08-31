@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6865031766067866756}
   - component: {fileID: 8501457822980311811}
   - component: {fileID: 2302743688479566105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01b7a285ad85bc4194363572722d8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 0}
 --- !u!50 &2302743688479566105
 Rigidbody2D:
   serializedVersion: 4

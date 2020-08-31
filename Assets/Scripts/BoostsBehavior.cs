@@ -12,7 +12,7 @@ public class BoostsBehavior : MonoBehaviour
         destroyDelay = boostDestroyDelay;
     }
 
-    void Updata()
+    void Update()
     {
         destroyDelay -= Time.deltaTime;
         if(destroyDelay <= 0)

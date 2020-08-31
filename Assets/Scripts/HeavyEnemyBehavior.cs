@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardEnemyBehavior : MonoBehaviour
+public class HeavyEnemyBehavior : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;
     GameManager gm;
-    public int enemyHp = 20;
+    public int enemyHp = 50;
     public GameObject[] Boosts = new GameObject[3];
 
     private bool followingPlayer = false;
@@ -23,7 +23,7 @@ public class StandardEnemyBehavior : MonoBehaviour
     {
         this.transform.rotation = LookAtPlayer();
 
-        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.heavyEnemySpeed, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
@@ -50,7 +50,7 @@ public class StandardEnemyBehavior : MonoBehaviour
             if (enemyHp <= 0)
             {
                 SpawnBoost();
-                EnemyDestroy();                
+                EnemyDestroy();
             }
         }
     }
@@ -73,11 +73,11 @@ public class StandardEnemyBehavior : MonoBehaviour
 
         this.rb.velocity = Vector3.zero;
         this.rb.angularVelocity = 0.0f;
-        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.heavyEnemySpeed, ForceMode2D.Impulse);
 
         float distance = Vector2.Distance(this.transform.position, player.transform.position);
 
-        if(distance <= gm.distanceFromThePlayer)
+        if (distance <= gm.distanceFromThePlayer)
         {
             this.rb.velocity = Vector3.zero;
         }
@@ -91,7 +91,7 @@ public class StandardEnemyBehavior : MonoBehaviour
         this.rb.velocity = Vector3.zero;
         this.rb.angularVelocity = 0.0f;
 
-        this.rb.AddForce(this.gameObject.transform.up * gm.standardEnemySpeed, ForceMode2D.Impulse);
+        this.rb.AddForce(this.gameObject.transform.up * gm.heavyEnemySpeed, ForceMode2D.Impulse);
     }
 
     void HpLoss()

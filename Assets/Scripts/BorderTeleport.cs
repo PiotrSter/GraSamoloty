@@ -30,19 +30,19 @@ public class BorderTeleport : MonoBehaviour
             switch (dir)
             {
                 case Direction.Top:
-                    vector = new Vector2(obj.transform.position.x, -this.transform.position.y + 5.0f);
+                    vector = new Vector2(obj.transform.position.x, -this.transform.position.y + 7.0f);
                     break;
 
                 case Direction.Left:
-                    vector = new Vector2(-this.transform.position.x - 5.0f, obj.transform.position.y);
+                    vector = new Vector2(-this.transform.position.x - 7.0f, obj.transform.position.y);
                     break;
 
                 case Direction.Bot:
-                    vector = new Vector2(obj.transform.position.x, -this.transform.position.y - 5.0f);
+                    vector = new Vector2(obj.transform.position.x, -this.transform.position.y - 7.0f);
                     break;
 
                 case Direction.Right:
-                    vector = new Vector2(-this.transform.position.x + 5.0f, obj.transform.position.y);
+                    vector = new Vector2(-this.transform.position.x + 7.0f, obj.transform.position.y);
                     break;
             }
 
