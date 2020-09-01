@@ -64,10 +64,15 @@ public class EnemySpawner : MonoBehaviour
             case 3:
                 if (gm.howManyEnemysSpawn < 5)
                 {
-                    Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);
+                    Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);                    
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
+                if (gm.howManyEnemysSpawn < 5)
+                {
                     Instantiate(heavyEnemy, new Vector3(70f, 0, 0), Quaternion.identity);
-                    gm.howManyEnemysSpawn += 2;
-                    gm.howManyEnemysToKill += 2;
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
                 }
                 if (gm.howManyEnemysToKill == 0)
                 {
@@ -76,7 +81,37 @@ public class EnemySpawner : MonoBehaviour
                 }
                 break;
             case 4:
-                Debug.Log("Fala 4");
+                if (gm.howManyEnemysSpawn < 5)
+                {
+                    Instantiate(heavyEnemy, new Vector3(0, -43f, 0), Quaternion.identity);
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
+                if (gm.howManyEnemysSpawn < 5)
+                {
+                    Instantiate(standardEnemy, new Vector3(0, 45f, 0), Quaternion.identity);
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
+                if (gm.howManyEnemysToKill == 0)
+                {
+                    Wave++;
+                    gm.howManyEnemysSpawn = 0;
+                }
+                break;
+            case 5:
+                if (gm.howManyEnemysSpawn < 7)
+                {
+                    Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
+                if (gm.howManyEnemysSpawn < 7)
+                {
+                    Instantiate(heavyEnemy, new Vector3(70f, 0, 0), Quaternion.identity);
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
                 break;
         }
     }
