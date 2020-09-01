@@ -75,7 +75,7 @@ public class PlayerControl : MonoBehaviour
         }
         if (col.name == "PowerUp(Clone)")
         {
-            if (gm.playerDemage <= 30)
+            if (gm.playerDemage < 30)
             {
                 PlayerDemageUpdata();
             }

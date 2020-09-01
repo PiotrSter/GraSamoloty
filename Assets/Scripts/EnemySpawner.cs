@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemySpawner : MonoBehaviour
     public float timeToSpawnEnemy = 5f;
     public float spawnDelay;
     public int Wave = 1;
+    public Text waveText;
+    public float timeToDestroyText = 5f;
+    public float textDestroyDelay;
 
     void Awake()
     {
@@ -19,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         spawnDelay = timeToSpawnEnemy;
+        textDestroyDelay = timeToDestroyText;
     }
 
     void Update()
@@ -28,6 +33,15 @@ public class EnemySpawner : MonoBehaviour
         {
             SpawnEnemy();
             spawnDelay = timeToSpawnEnemy;
+        }
+        textDestroyDelay -= Time.deltaTime;
+        if (textDestroyDelay > 0)
+        {
+            waveText.text = "Fala " + Wave;
+        }
+        else
+        {
+            waveText.text = " ";
         }
     }
 
@@ -46,6 +60,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Wave++;
                     gm.howManyEnemysSpawn = 0;
+                    textDestroyDelay = timeToDestroyText;
                 }
                 break;
             case 2:
@@ -59,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Wave++;
                     gm.howManyEnemysSpawn = 0;
+                    textDestroyDelay = timeToDestroyText;
                 }
                 break;
             case 3:
@@ -78,6 +94,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Wave++;
                     gm.howManyEnemysSpawn = 0;
+                    textDestroyDelay = timeToDestroyText;
                 }
                 break;
             case 4:
@@ -97,6 +114,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Wave++;
                     gm.howManyEnemysSpawn = 0;
+                    textDestroyDelay = timeToDestroyText;
                 }
                 break;
             case 5:
