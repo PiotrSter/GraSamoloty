@@ -43,7 +43,7 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.name == "BulletEnemy Variant(Clone)")
+        if (col.name == "BulletEnemy(Clone)")
         {
             PlayerHpLoss();
             if(gm.playerHp <= 0)

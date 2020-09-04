@@ -8,7 +8,7 @@ public class DetectionShootArea : MonoBehaviour
 
     void Awake()
     {
-        enemyShot = GameObject.Find("EnemyShotSpawn").GetComponent<EnemyShotSpawner>();
+        enemyShot = GameObject.Find("EnemyShotSpawn").GetComponent<EnemyShotSpawner>();        
     }
 
     void OnTriggerEnter2D(Collider2D obj)

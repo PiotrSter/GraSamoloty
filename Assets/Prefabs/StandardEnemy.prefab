@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9937d41d509045c43a559996d8a59395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletEnemy: {fileID: 5658558532744074960, guid: f4586a04317470f46b10601ab6f64c3e,
+  BulletEnemy: {fileID: 8810620424203378266, guid: c0eb606645f52b644817abf4bb63b35e,
     type: 3}
   bulletDelay: 2
   shotDelay: 0

@@ -16,7 +16,7 @@ public class EnemyShotSpawner : MonoBehaviour
             shotDelay -= Time.deltaTime;
             if (shotDelay <= 0)
             {
-                shotBullet();
+                shotBullet();                
                 shotDelay = bulletDelay;
             }
             
@@ -26,7 +26,7 @@ public class EnemyShotSpawner : MonoBehaviour
 
     void shotBullet()
     {
-        Instantiate(BulletEnemy, transform.position, transform.rotation);
+        Instantiate(BulletEnemy, this.transform.position, this.transform.rotation);
     }
 
 }

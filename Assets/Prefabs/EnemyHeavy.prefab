@@ -489,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7224772269989422007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: 3.28, z: 0}
+  m_LocalPosition: {x: -0.14, y: 3.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7823634230671256639}
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9937d41d509045c43a559996d8a59395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletEnemy: {fileID: 5658558532744074960, guid: f4586a04317470f46b10601ab6f64c3e,
+  BulletEnemy: {fileID: 1941075564461533500, guid: 002dd97ee92974d41af49763a6afb968,
     type: 3}
   bulletDelay: 2
   shotDelay: 0
