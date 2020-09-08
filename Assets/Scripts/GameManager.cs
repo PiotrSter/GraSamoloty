@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public HpBar hpBar;
     public FuelLevel fuelBar;
     public Text shotPowerText;
+    public GameObject EndLevelPanel;
 
     void Start()
     {

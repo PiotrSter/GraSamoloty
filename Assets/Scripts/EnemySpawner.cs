@@ -130,6 +130,11 @@ public class EnemySpawner : MonoBehaviour
                     gm.howManyEnemysSpawn++;
                     gm.howManyEnemysToKill++;
                 }
+                if (gm.howManyEnemysToKill == 0)
+                {
+                    Time.timeScale = 0;
+                    gm.EndLevelPanel.SetActive(true);
+                }
                 break;
         }
     }
