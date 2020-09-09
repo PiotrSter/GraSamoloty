@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int howManyEnemysSpawn = 0;
     public int howManyEnemysToKill = 0;
     public float standardEnemySpeed = 10f;
-    public float heavyEnemySpeed = 7f;
+    public float heavyEnemySpeed = 10f;
     public float distanceFromThePlayer = 10f;
     public int playerHp = 100;
     public float playerFuel = 100f;

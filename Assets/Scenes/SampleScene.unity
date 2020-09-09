@@ -1461,7 +1461,7 @@ MonoBehaviour:
     type: 3}
   timeToSpawnEnemy: 5
   spawnDelay: 0
-  Wave: 5
+  Wave: 1
   waveText: {fileID: 1561104900}
   timeToDestroyText: 5
   textDestroyDelay: 0
