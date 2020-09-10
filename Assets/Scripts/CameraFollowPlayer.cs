@@ -7,8 +7,18 @@ public class CameraFollowPlayer : MonoBehaviour
     public Transform playerTransform;
     private float cameraOffset = -10f;
 
+    GameManager gm;
+
+    void Awake()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     void Update()
     {
-        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
+        if (gm.gameOver == false)
+        {
+            transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraOffset);
+        }
     }
 }

@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         textDestroyDelay -= Time.deltaTime;
         if (textDestroyDelay > 0)
         {
-            waveText.text = "Fala " + Wave;
+            waveText.text = "Wave " + Wave;
         }
         else
         {

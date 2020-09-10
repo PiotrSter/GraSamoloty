@@ -31,7 +31,7 @@ public class CloudSpawner : MonoBehaviour
     {
         float randomY = Random.Range(-35.5f, 35.5f);
         int randomIndex = Random.Range(0, 4);
-        Instantiate(Clouds[randomIndex], new Vector3(-109, randomY, 0), Quaternion.identity);
+        Instantiate(Clouds[randomIndex], new Vector3(-109, randomY, 1), Quaternion.identity);
         gm.howManyClouds += 1;
     }
 }

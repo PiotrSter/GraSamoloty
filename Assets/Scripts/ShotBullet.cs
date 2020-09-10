@@ -7,6 +7,13 @@ public class ShotBullet : MonoBehaviour
     public GameObject Bullet;
     public float bulletDelay = 0.5f;
     public float shotDelay;
+    
+    GameManager gm;
+
+    void Awake()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     void Update()
     {
@@ -15,8 +22,11 @@ public class ShotBullet : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire2"))
             {
-                shotBullet();
-                shotDelay = bulletDelay;
+                if (gm.pause == false)
+                {
+                    shotBullet();
+                    shotDelay = bulletDelay;
+                }
             }
         }
     }

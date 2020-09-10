@@ -24,15 +24,18 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
-            this.rb.velocity = Vector2.zero;
+            this.rb.velocity = transform.up * gm.speedWithOutForce;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (gm.pause == false)
         {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
-        }       
-        if (Input.GetKey(KeyCode.D))
-        {
-            this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
+            if (Input.GetKey(KeyCode.A))
+            {
+                this.gameObject.transform.Rotate(new Vector3(0, 0, planeSpeedRotate));
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
+            }
         }
         PlayerFuelLoss();
         if(gm.playerFuel <= 0 )
@@ -95,7 +98,9 @@ public class PlayerControl : MonoBehaviour
     void PlayerDestroy()
     {
         Destroy(this.gameObject);
+        gm.gameOver = true;
         Time.timeScale = 0;
+        gm.GameOverPanel.SetActive(true);
     }
 
     void PlayerFuelUpdata()

@@ -53,11 +53,6 @@ public class StandardEnemyBehavior : MonoBehaviour
                 EnemyDestroy();                
             }
         }
-
-        /*if (col.name == "DetectionEnemyArea")
-        {
-            this.transform.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(0, 0, 90) - this.transform.position);
-        }*/
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -66,11 +61,6 @@ public class StandardEnemyBehavior : MonoBehaviour
         {
             ResetMovement();
         }
-
-        /*if (col.name == "DetectionEnemyArea")
-        {
-            ResetMovement();
-        }*/
     }
 
     private void FollowPlayer()
@@ -89,7 +79,7 @@ public class StandardEnemyBehavior : MonoBehaviour
 
         if(distance <= gm.distanceFromThePlayer)
         {
-            this.rb.velocity = Vector3.zero;
+            this.rb.velocity = this.gameObject.transform.up * gm.speedWithOutForce; 
         }
     }
 

@@ -17,10 +17,15 @@ public class GameManager : MonoBehaviour
     public float playerFuel = 100f;
     public int playerDemage = 10;
     public int standardEnemyDemage = 10;
+    public float speedWithOutForce = 5f;
     public HpBar hpBar;
     public FuelLevel fuelBar;
     public Text shotPowerText;
     public GameObject EndLevelPanel;
+    public GameObject GameOverPanel;
+    public GameObject PausePanel;
+    public bool gameOver = false;
+    public bool pause = false;
 
     void Start()
     {
@@ -34,4 +39,5 @@ public class GameManager : MonoBehaviour
         fuelBar.SetFuel(playerFuel);
         shotPowerText.text = "Shot Power " + playerDemage + "/30";
     }
+
 }

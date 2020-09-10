@@ -79,7 +79,7 @@ public class HeavyEnemyBehavior : MonoBehaviour
 
         if (distance <= gm.distanceFromThePlayer)
         {
-            this.rb.velocity = Vector3.zero;
+            this.rb.velocity = this.gameObject.transform.up * gm.speedWithOutForce;
         }
     }
 
