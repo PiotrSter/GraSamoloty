@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float planeSpeed = 10.0f;
+    public float planeSpeed = 12.0f;
     public float planeSpeedRotate = 1.0f;
 
     GameManager gm;

@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public int howManyClouds = 0;
     public int howManyEnemysSpawn = 0;
     public int howManyEnemysToKill = 0;
-    public float standardEnemySpeed = 10f;
-    public float heavyEnemySpeed = 10f;
+    public float standardEnemySpeed = 12f;
+    public float heavyEnemySpeed = 12f;
     public float distanceFromThePlayer = 10f;
     public int playerHp = 100;
     public float playerFuel = 100f;
