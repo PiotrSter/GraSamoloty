@@ -9,7 +9,7 @@ public class BossBehavior : MonoBehaviour
     GameManager gm;
     public int bossHp = 500;
 
-    private bool followingPlayer = false;
+    public bool followingPlayer = false;
 
     private void Awake()
     {

@@ -34,6 +34,11 @@ public class BulletBehavior : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (obj.gameObject.tag == "Boss")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }

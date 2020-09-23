@@ -10,7 +10,7 @@ public class StandardEnemyBehavior : MonoBehaviour
     public int enemyHp = 20;
     public GameObject[] Boosts = new GameObject[3];
 
-    private bool followingPlayer = false;
+    public bool followingPlayer = false;
 
     private void Awake()
     {
