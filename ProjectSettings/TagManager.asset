@@ -9,6 +9,7 @@ TagManager:
   - StandardEnemy
   - Enemy
   - Boss
+  - Plane
   layers:
   - Default
   - TransparentFX

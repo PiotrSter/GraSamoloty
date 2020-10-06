@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PasueGame : MonoBehaviour
 {
@@ -42,5 +43,10 @@ public class PasueGame : MonoBehaviour
     public void ReasumeButton()
     {
         Pause();
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

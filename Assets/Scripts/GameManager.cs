@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +39,16 @@ public class GameManager : MonoBehaviour
         hpBar.SetHealth(playerHp);
         fuelBar.SetFuel(playerFuel);
         shotPowerText.text = "Shot Power " + playerDemage + "/30";
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void TryAgainButton()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }

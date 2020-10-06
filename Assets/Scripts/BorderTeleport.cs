@@ -23,7 +23,7 @@ public class BorderTeleport : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D obj)
     {
-        if (/*obj.gameObject.tag == "Player" ||*/ obj.gameObject.tag == "Enemy")
+        if (obj.gameObject.tag == "Enemy")
         {
             Vector2 vector = new Vector2();
 

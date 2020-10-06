@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject standardEnemy;
     public GameObject heavyEnemy;
+    public GameObject boss;
     GameManager gm;
     public float timeToSpawnEnemy = 5f;
     public float spawnDelay;
@@ -127,6 +128,20 @@ public class EnemySpawner : MonoBehaviour
                 if (gm.howManyEnemysSpawn < 7)
                 {
                     Instantiate(heavyEnemy, new Vector3(70f, 0, 0), Quaternion.identity);
+                    gm.howManyEnemysSpawn++;
+                    gm.howManyEnemysToKill++;
+                }
+                if (gm.howManyEnemysToKill == 0)
+                {
+                    Wave++;
+                    gm.howManyEnemysSpawn = 0;
+                    textDestroyDelay = timeToDestroyText;
+                }
+                break;
+            case 6:
+                if (gm.howManyEnemysSpawn < 1)
+                {
+                    Instantiate(boss, new Vector3(-70f, 0, 0), Quaternion.identity);
                     gm.howManyEnemysSpawn++;
                     gm.howManyEnemysToKill++;
                 }

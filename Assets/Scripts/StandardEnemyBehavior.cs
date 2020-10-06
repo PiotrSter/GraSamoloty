@@ -53,6 +53,11 @@ public class StandardEnemyBehavior : MonoBehaviour
                 EnemyDestroy();                
             }
         }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -60,6 +65,11 @@ public class StandardEnemyBehavior : MonoBehaviour
         if (col.name == "DetectionArea")
         {
             ResetMovement();
+        }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
     }
 
