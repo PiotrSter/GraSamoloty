@@ -120,4 +120,5 @@ public class StandardEnemyBehavior : MonoBehaviour
         int randomIndex = Random.Range(0, 3);
         Instantiate(Boosts[randomIndex], transform.position, transform.rotation);
     }
+
 }

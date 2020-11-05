@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7550571545431056772}
   - component: {fileID: 4022191560111436864}
   - component: {fileID: 687242696548283296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StandardEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: 3696198462870154647, guid: 2bcc0c2384314f241a3a6a0da7c7e7b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
+  followingPlayer: 0
 --- !u!1 &3492258654300186472
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3492258655153023588}
   - component: {fileID: 3492258655153023589}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyShotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

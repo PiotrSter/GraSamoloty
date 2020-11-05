@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 407025876767740351}
   - component: {fileID: 5597889808659434659}
   - component: {fileID: 8475834238397083319}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyHeavy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8972326627232490175}
   - component: {fileID: 5198231482393514773}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyShotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

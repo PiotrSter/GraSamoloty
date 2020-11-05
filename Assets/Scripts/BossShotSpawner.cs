@@ -32,6 +32,6 @@ public class BossShotSpawner : MonoBehaviour
 
     void shotBullet()
     {
-        Instantiate(BulletEnemy, this.transform.position, player.transform.rotation);
+        Instantiate(BulletEnemy, this.transform.position, transform.rotation);
     }
 }

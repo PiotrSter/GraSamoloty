@@ -23,8 +23,8 @@ TagManager:
   - Bullet
   - DetectionArea
   - Boost
-  - 
-  - 
+  - Enemy
+  - PlayerDetectionArea
   - 
   - 
   - 
