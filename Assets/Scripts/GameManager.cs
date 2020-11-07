@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public GameObject PausePanel;
     public bool gameOver = false;
     public bool pause = false;
+    //public GameObject pointer;
+    //public GameObject player;
 
     void Start()
     {
@@ -50,5 +52,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    /*
+    public void SpawnPointer()
+    {
+        Instantiate(pointer, player.transform.position, transform.rotation);  
+    } 
 
+    public void DestroyPointer()
+    {
+        Destroy(pointer);
+    }
+    */
 }

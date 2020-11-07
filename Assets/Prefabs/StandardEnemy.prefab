@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: 3696198462870154647, guid: 2bcc0c2384314f241a3a6a0da7c7e7b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
+  pointer: {fileID: 669172065551953443, guid: 8957ec94eb3025c46b909ae6b29c685b, type: 3}
   followingPlayer: 0
 --- !u!1 &3492258654300186472
 GameObject:

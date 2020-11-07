@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PointerBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject enemy;
+    private GameObject player;
+
     void Start()
     {
-        
+        this.enemy = GameObject.FindGameObjectWithTag("Enemy");
+        this.player = GameObject.Find("Player");
+        transform.SetParent(player.transform);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        this.transform.rotation = FindEnemy();
     }
+
+    private Quaternion FindEnemy() => Quaternion.LookRotation(Vector3.forward, enemy.transform.position - this.transform.position);
 }

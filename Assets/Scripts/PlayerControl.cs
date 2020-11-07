@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     public float planeSpeed = 12.0f;
     public float planeSpeedRotate = 1.0f;
+    public GameObject pointer;
 
     GameManager gm;
 
@@ -14,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Instantiate(pointer, new Vector3(transform.position.x + 11f, transform.position.y + 0.7f, transform.position.z), transform.rotation);
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             this.rb.velocity = transform.up * planeSpeed;
+            PlayerFuelLoss();
         }
         else
         {
@@ -37,7 +40,6 @@ public class PlayerControl : MonoBehaviour
                 this.gameObject.transform.Rotate(new Vector3(0, 0, -planeSpeedRotate));
             }
         }
-        PlayerFuelLoss();
         if(gm.playerFuel <= 0 )
         {
             PlayerDestroy();
@@ -56,13 +58,13 @@ public class PlayerControl : MonoBehaviour
         }
         if (col.name == "carnister(Clone)")
         {
-            if (gm.playerFuel <= 90)
+            if (gm.playerFuel <= 190)
             {
                 PlayerFuelUpdata();
             }
             else
             {
-                gm.playerFuel += 100 - gm.playerFuel;
+                gm.playerFuel += 200 - gm.playerFuel;
             }
         }
         if (col.name == "hpicon(Clone)")
@@ -117,4 +119,5 @@ public class PlayerControl : MonoBehaviour
     {
         gm.playerDemage += 5;
     }
+
 }

@@ -9,8 +9,10 @@ public class StandardEnemyBehavior : MonoBehaviour
     GameManager gm;
     public int enemyHp = 20;
     public GameObject[] Boosts = new GameObject[3];
+    //public GameObject pointer;
 
     public bool followingPlayer = false;
+    public bool isLive = true;
 
     private void Awake()
     {
@@ -58,6 +60,11 @@ public class StandardEnemyBehavior : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
         }
+
+        /*if (col.name == "FieldOfView")
+        {
+            gm.DestroyPointer();
+        }*/
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -71,6 +78,11 @@ public class StandardEnemyBehavior : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
+
+        /*if (col.name == "FieldOfView")
+        {
+            gm.SpawnPointer();
+        }*/
     }
 
     private void FollowPlayer()
@@ -112,7 +124,9 @@ public class StandardEnemyBehavior : MonoBehaviour
     void EnemyDestroy()
     {
         gm.howManyEnemysToKill--;
+        isLive = false;
         Destroy(this.gameObject);
+        //Destroy(pointer);
     }
 
     void SpawnBoost()
