@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     public int howManyClouds = 0;
     public int howManyEnemysSpawn = 0;
     public int howManyEnemysToKill = 0;
-    public float standardEnemySpeed = 12f;
-    public float heavyEnemySpeed = 12f;
     public float distanceFromThePlayer = 10f;
     public int playerHp = 100;
     public float playerFuel = 100f;
@@ -27,8 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject PausePanel;
     public bool gameOver = false;
     public bool pause = false;
-    //public GameObject pointer;
-    //public GameObject player;
+    public List<GameObject> listEnemy;
 
     void Start()
     {
@@ -52,15 +49,4 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    /*
-    public void SpawnPointer()
-    {
-        Instantiate(pointer, player.transform.position, transform.rotation);  
-    } 
-
-    public void DestroyPointer()
-    {
-        Destroy(pointer);
-    }
-    */
 }

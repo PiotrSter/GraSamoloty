@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 6316499561058644017}
   - component: {fileID: 407025876767740351}
   - component: {fileID: 5597889808659434659}
-  - component: {fileID: 8475834238397083319}
+  - component: {fileID: 2938891629066749245}
   m_Layer: 12
   m_Name: EnemyHeavy
   m_TagString: Enemy
@@ -447,7 +447,7 @@ PolygonCollider2D:
       - {x: -7.69, y: 2.25}
       - {x: -7.7, y: 2.28}
       - {x: -7.73, y: 2.28}
---- !u!114 &8475834238397083319
+--- !u!114 &2938891629066749245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -460,12 +460,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 50
+  enemySpeed: 12
   Boosts:
-  - {fileID: 4278197108170863807, guid: 49680bb7583803c4c8ee3c8a9d555d9d, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
+  - {fileID: 4278197108170863807, guid: 49680bb7583803c4c8ee3c8a9d555d9d, type: 3}
   - {fileID: 3696198462870154647, guid: 2bcc0c2384314f241a3a6a0da7c7e7b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
   - {fileID: 5388114387184697723, guid: ece790f7ebc5e8f44aedf778c89ba2b7, type: 3}
+  followingPlayer: 0
 --- !u!1 &7224772269989422007
 GameObject:
   m_ObjectHideFlags: 0

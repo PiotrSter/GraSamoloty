@@ -82,10 +82,10 @@ GameObject:
   - component: {fileID: 8102700622077996821}
   - component: {fileID: 8102700622077996820}
   - component: {fileID: 8102700622077996819}
-  - component: {fileID: 8102700622077996818}
+  - component: {fileID: 2208504714407683781}
   m_Layer: 12
   m_Name: EnemyBoss
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8102700622077996818
+--- !u!114 &2208504714407683781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,7 +402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adfdea53b37bbc44990db53f840cc58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHp: 500
+  enemyHp: 500
+  enemySpeed: 12
+  Boosts: []
   followingPlayer: 0
 --- !u!1 &8102700623145448123
 GameObject:

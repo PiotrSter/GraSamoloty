@@ -6,9 +6,11 @@ public class PointerBehavior : MonoBehaviour
 {
     private GameObject enemy;
     private GameObject player;
+    GameManager gm;
 
-    void Start()
+    void Awake()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         this.enemy = GameObject.FindGameObjectWithTag("Enemy");
         this.player = GameObject.Find("Player");
         transform.SetParent(player.transform);

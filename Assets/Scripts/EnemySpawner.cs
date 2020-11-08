@@ -81,7 +81,7 @@ public class EnemySpawner : MonoBehaviour
             case 3:
                 if (gm.howManyEnemysSpawn < 5)
                 {
-                    Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);                    
+                    Instantiate(standardEnemy, new Vector3(-70f, 0, 0), Quaternion.identity);
                     gm.howManyEnemysSpawn++;
                     gm.howManyEnemysToKill++;
                 }
@@ -107,7 +107,7 @@ public class EnemySpawner : MonoBehaviour
                 }
                 if (gm.howManyEnemysSpawn < 5)
                 {
-                    Instantiate(standardEnemy, new Vector3(0, 45f, 0), Quaternion.identity);
+                    Instantiate(standardEnemy, new Vector3(0, 45f, 0), Quaternion.identity);;
                     gm.howManyEnemysSpawn++;
                     gm.howManyEnemysToKill++;
                 }
