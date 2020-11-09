@@ -48,7 +48,7 @@ public class BorderTeleport : MonoBehaviour
 
             obj.transform.position = vector;
         }
-        else if (obj.gameObject.tag == "Player")
+        else if (obj.name == "PlayerDetection")
         {
             Vector2 vector = new Vector2();
 
@@ -71,7 +71,7 @@ public class BorderTeleport : MonoBehaviour
                     break;
             }
 
-            obj.transform.position = vector;
+            obj.transform.parent.position = vector;
         }
         else if (obj.gameObject.tag == "Boss")
         {

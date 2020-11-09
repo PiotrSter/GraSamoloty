@@ -24,9 +24,9 @@ public class BoostsBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.tag == "Player")
+        if (obj.name == "PlayerDetection")
         {
-            Destroy(this.gameObject);
+            BoostDestroy();
         }
     }
 

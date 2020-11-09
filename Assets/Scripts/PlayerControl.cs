@@ -11,10 +11,18 @@ public class PlayerControl : MonoBehaviour
 
     GameManager gm;
 
+    public delegate void onPlayerDetectionTriggerEnter2DDelegate(Collider2D col);
+    public onPlayerDetectionTriggerEnter2DDelegate onPlayerDetectionTriggerEnter2D;
+
+    public delegate void onPlayerDetectionTriggerExit2DDelegate(Collider2D col);
+    public onPlayerDetectionTriggerExit2DDelegate onPlayerDetectionTriggerExit2D;
+
     void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        onPlayerDetectionTriggerEnter2D = new onPlayerDetectionTriggerEnter2DDelegate(OnPlayerDetectionTriggerEnter2D);
+        onPlayerDetectionTriggerExit2D = new onPlayerDetectionTriggerExit2DDelegate(OnPlayerDetectionTriggerExit2D);
     }
 
     void Update()
@@ -45,12 +53,17 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnPlayerDetectionTriggerEnter2D(Collider2D col)
     {
+        if(col.tag == "Enemy")
+        {
+            Debug.Log("TEST");
+        }
+
         if (col.name == "BulletEnemy(Clone)")
         {
             PlayerHpLoss();
-            if(gm.playerHp <= 0)
+            if (gm.playerHp <= 0)
             {
                 PlayerDestroy();
             }
@@ -86,7 +99,15 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void PlayerHpLoss()
+    void OnPlayerDetectionTriggerExit2D(Collider2D col)
+    {
+        if(col.tag == "Enemy")
+        {
+            // ...
+        }
+    }
+
+    public void PlayerHpLoss()
     {
         gm.playerHp -= gm.standardEnemyDemage;
     }
@@ -96,7 +117,7 @@ public class PlayerControl : MonoBehaviour
         gm.playerFuel -= Time.deltaTime;
     }
 
-    void PlayerDestroy()
+    public void PlayerDestroy()
     {
         Destroy(this.gameObject);
         gm.gameOver = true;
@@ -104,17 +125,17 @@ public class PlayerControl : MonoBehaviour
         gm.GameOverPanel.SetActive(true);
     }
 
-    void PlayerFuelUpdata()
+    public void PlayerFuelUpdata()
     {
         gm.playerFuel += 10;
     }
 
-    void PlayerHpUpdata()
+    public void PlayerHpUpdata()
     {
         gm.playerHp += 10;
     }
 
-    void PlayerDemageUpdata()
+    public void PlayerDemageUpdata()
     {
         gm.playerDemage += 5;
     }
