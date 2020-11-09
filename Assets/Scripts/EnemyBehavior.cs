@@ -61,7 +61,6 @@ public abstract class EnemyBehavior : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
         }
-
     }
 
     virtual public void OnTriggerExit2D(Collider2D col)

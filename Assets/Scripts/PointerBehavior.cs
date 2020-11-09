@@ -14,6 +14,7 @@ public class PointerBehavior : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         this.player = GameObject.Find("Player");
         transform.SetParent(player.transform);
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
     }
 
     
@@ -43,6 +44,14 @@ public class PointerBehavior : MonoBehaviour
 
     private Quaternion FindEnemy()
     {
+        if (enemyTarget.GetComponent<EnemyBehavior>().distance < 20)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+        }
+        else
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
         return Quaternion.LookRotation(Vector3.forward, enemyTarget.transform.position - this.transform.position);
     }
 }

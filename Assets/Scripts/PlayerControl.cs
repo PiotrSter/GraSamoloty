@@ -15,7 +15,6 @@ public class PlayerControl : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //Instantiate(pointer, new Vector3(transform.position.x + 11f, transform.position.y + 0.7f, transform.position.z), transform.rotation);
     }
 
     void Update()
