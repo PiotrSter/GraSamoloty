@@ -14,7 +14,7 @@ public abstract class EnemyBehavior : MonoBehaviour
 
     public bool followingPlayer = false;
 
-    public void Awake()
+    virtual public void Awake()
     {
         this.player = GameObject.Find("Player");
         this.rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -22,14 +22,14 @@ public abstract class EnemyBehavior : MonoBehaviour
         gm.listEnemy.Add(this.gameObject);
     }
 
-    public void Start()
+    virtual public void Start()
     {
         this.transform.rotation = LookAtPlayer();
 
         this.rb.AddForce(this.gameObject.transform.up * enemySpeed, ForceMode2D.Impulse);
     }
 
-    public void FixedUpdate()
+    virtual public void FixedUpdate()
     {
         distance = Vector2.Distance(this.transform.position, player.transform.position);
 
@@ -40,7 +40,7 @@ public abstract class EnemyBehavior : MonoBehaviour
             FollowPlayer();
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
+    virtual public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name == "DetectionArea")
         {
@@ -64,7 +64,7 @@ public abstract class EnemyBehavior : MonoBehaviour
 
     }
 
-    public void OnTriggerExit2D(Collider2D col)
+    virtual public void OnTriggerExit2D(Collider2D col)
     {
         if (col.name == "DetectionArea")
         {
@@ -77,7 +77,7 @@ public abstract class EnemyBehavior : MonoBehaviour
         }
     }
 
-    public void FollowPlayer()
+    virtual public void FollowPlayer()
     {
         float zVelocity = 0.0f;
         float smoothTime = 0.2f;
@@ -89,17 +89,15 @@ public abstract class EnemyBehavior : MonoBehaviour
         this.rb.angularVelocity = 0.0f;
         this.rb.AddForce(this.gameObject.transform.up * enemySpeed, ForceMode2D.Impulse);
 
-        float distance = Vector2.Distance(this.transform.position, player.transform.position);
-
         if(distance <= gm.distanceFromThePlayer)
         {
             this.rb.velocity = this.gameObject.transform.up * gm.speedWithOutForce; 
         }
     }
 
-    public Quaternion LookAtPlayer() => Quaternion.LookRotation(Vector3.forward, player.transform.position - this.transform.position);
+    virtual public Quaternion LookAtPlayer() => Quaternion.LookRotation(Vector3.forward, player.transform.position - this.transform.position);
 
-    public void ResetMovement()
+    virtual public void ResetMovement()
     {
         followingPlayer = false;
         this.rb.velocity = Vector3.zero;
@@ -108,19 +106,19 @@ public abstract class EnemyBehavior : MonoBehaviour
         this.rb.AddForce(this.gameObject.transform.up * enemySpeed, ForceMode2D.Impulse);
     }
 
-    public void HpLoss()
+    virtual public void HpLoss()
     {
         enemyHp -= gm.playerDemage;
     }
 
-    public void EnemyDestroy()
+    virtual public void EnemyDestroy()
     {
         gm.howManyEnemysToKill--;
         gm.listEnemy.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
 
-    public void SpawnBoost()
+    virtual public void SpawnBoost()
     {
         int randomIndex = Random.Range(0, 3);
         Instantiate(Boosts[randomIndex], transform.position, transform.rotation);

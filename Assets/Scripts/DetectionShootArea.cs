@@ -11,17 +11,17 @@ public class DetectionShootArea : MonoBehaviour
         enemyShot = GameObject.Find("EnemyShotSpawn").GetComponent<EnemyShotSpawner>();        
     }
 
-    void OnTriggerEnter2D(Collider2D obj)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (obj.gameObject.tag == "Player")
+        if (col.name == "Player")
         {
             enemyShot.canShoot = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D obj)
+    void OnTriggerExit2D(Collider2D col)
     {
-        if (obj.gameObject.tag == "Player")
+        if (col.name == "Player")
         {
             enemyShot.canShoot = false;
         }

@@ -1,17 +1,17 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PointerBehavior : MonoBehaviour
 {
-    private GameObject enemy;
     private GameObject player;
-    GameManager gm;
+    private GameManager gm;
+    private GameObject enemyTarget;
 
     void Awake()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        this.enemy = GameObject.FindGameObjectWithTag("Enemy");
         this.player = GameObject.Find("Player");
         transform.SetParent(player.transform);
     }
@@ -19,8 +19,30 @@ public class PointerBehavior : MonoBehaviour
     
     void Update()
     {
-        this.transform.rotation = FindEnemy();
+        if (gm.listEnemy.Count() > 0)
+        {
+            FindMin();
+            this.transform.rotation = FindEnemy();
+        }
     }
 
-    private Quaternion FindEnemy() => Quaternion.LookRotation(Vector3.forward, enemy.transform.position - this.transform.position);
+    private void FindMin()
+    {
+
+            enemyTarget = gm.listEnemy.FirstOrDefault().gameObject;
+
+            foreach (GameObject enemy in gm.listEnemy)
+            {
+                if (enemy.GetComponent<EnemyBehavior>().distance < enemyTarget.GetComponent<EnemyBehavior>().distance)
+                {
+                    enemyTarget = enemy;
+                }
+            }
+
+    }
+
+    private Quaternion FindEnemy()
+    {
+        return Quaternion.LookRotation(Vector3.forward, enemyTarget.transform.position - this.transform.position);
+    }
 }
