@@ -9,7 +9,7 @@ public abstract class EnemyBehavior : MonoBehaviour
     GameManager gm;
     public int enemyHp;
     public float enemySpeed;
-    public GameObject[] Boosts = new GameObject[5];
+    public GameObject[] Boosts = new GameObject[4];
     public float distance;
 
     public bool followingPlayer = false;
@@ -88,10 +88,6 @@ public abstract class EnemyBehavior : MonoBehaviour
         this.rb.angularVelocity = 0.0f;
         this.rb.AddForce(this.gameObject.transform.up * enemySpeed, ForceMode2D.Impulse);
 
-        if(distance <= gm.distanceFromThePlayer)
-        {
-            this.rb.velocity = this.gameObject.transform.up * gm.speedWithOutForce; 
-        }
     }
 
     virtual public Quaternion LookAtPlayer() => Quaternion.LookRotation(Vector3.forward, player.transform.position - this.transform.position);
@@ -119,7 +115,7 @@ public abstract class EnemyBehavior : MonoBehaviour
 
     virtual public void SpawnBoost()
     {
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = Random.Range(0, 4);
         Instantiate(Boosts[randomIndex], transform.position, transform.rotation);
     }
 

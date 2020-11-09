@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 2208504714407683781}
   m_Layer: 12
   m_Name: EnemyBoss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 500
   enemySpeed: 12
-  Boosts: []
+  Boosts:
+  - {fileID: 3054696550256977889, guid: 266afcd18b3fb104684428418738c1f2, type: 3}
+  - {fileID: 3054696550256977889, guid: 266afcd18b3fb104684428418738c1f2, type: 3}
+  - {fileID: 3054696550256977889, guid: 266afcd18b3fb104684428418738c1f2, type: 3}
+  - {fileID: 3054696550256977889, guid: 266afcd18b3fb104684428418738c1f2, type: 3}
+  distance: 0
   followingPlayer: 0
 --- !u!1 &8102700623145448123
 GameObject:

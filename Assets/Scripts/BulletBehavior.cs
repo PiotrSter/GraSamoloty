@@ -30,7 +30,7 @@ public class BulletBehavior : MonoBehaviour
             Destroy(this.gameObject);
         }
         
-        if (obj.gameObject.tag == "Player")
+        if (obj.name == "PlayerDetection")
         {
             Destroy(this.gameObject);
         }

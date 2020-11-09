@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int playerHp = 100;
     public float playerFuel = 100f;
     public int playerDemage = 10;
-    public int standardEnemyDemage = 10;
+    public int standardEnemyDemage = 20;
     public float speedWithOutForce = 5f;
     public HpBar hpBar;
     public FuelLevel fuelBar;
@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
         shotPowerText.text = "Shot Power " + playerDemage + "/30";
     }
 
-    public void MenuButton()
+    public void ExitButton()
     {
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
     public void TryAgainButton()

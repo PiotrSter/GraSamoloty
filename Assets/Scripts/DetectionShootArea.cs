@@ -13,7 +13,7 @@ public class DetectionShootArea : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.name == "Player")
+        if (col.name == "PlayerDetection")
         {
             enemyShot.canShoot = true;
         }
@@ -21,7 +21,7 @@ public class DetectionShootArea : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.name == "Player")
+        if (col.name == "PlayerDetection")
         {
             enemyShot.canShoot = false;
         }

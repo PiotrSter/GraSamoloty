@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     public float planeSpeed = 12.0f;
     public float planeSpeedRotate = 1.0f;
     public GameObject pointer;
+    ShotBullet bulletShot;
 
     GameManager gm;
 
@@ -23,6 +24,7 @@ public class PlayerControl : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         onPlayerDetectionTriggerEnter2D = new onPlayerDetectionTriggerEnter2DDelegate(OnPlayerDetectionTriggerEnter2D);
         onPlayerDetectionTriggerExit2D = new onPlayerDetectionTriggerExit2DDelegate(OnPlayerDetectionTriggerExit2D);
+        bulletShot = GameObject.Find("ShotSpawn").GetComponent<ShotBullet>();
     }
 
     void Update()
@@ -55,11 +57,6 @@ public class PlayerControl : MonoBehaviour
 
     void OnPlayerDetectionTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Enemy")
-        {
-            Debug.Log("TEST");
-        }
-
         if (col.name == "BulletEnemy(Clone)")
         {
             PlayerHpLoss();
@@ -97,13 +94,29 @@ public class PlayerControl : MonoBehaviour
                 PlayerDemageUpdata();
             }
         }
+        if (col.gameObject.tag == "Enemy")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+            bulletShot.canShoot = false;
+        }
+        if (col.gameObject.tag == "Boss")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+            bulletShot.canShoot = false;
+        }
     }
 
     void OnPlayerDetectionTriggerExit2D(Collider2D col)
     {
-        if(col.tag == "Enemy")
+        if(col.gameObject.tag == "Enemy")
         {
-            // ...
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            bulletShot.canShoot = true;
+        }
+        if (col.gameObject.tag == "Boss")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            bulletShot.canShoot = true;
         }
     }
 
